@@ -22,11 +22,11 @@ export const modules: Module[] = [
     id: "01",
     title: "WORKSHOPS",
     body: "Hands-on sessions led by seniors and visiting engineers. No slides without code.",
-    meta: "weekly",
+    meta: "bi-monthly",
     span: "md:col-span-4",
     detail: {
-      format: "90-minute code-along sessions. Recordings posted to the GitHub org.",
-      cadence: "Every Wednesday during the semester.",
+      format: "90-minute code-along sessions.",
+      cadence: "Every 7th and 23rd during the semester.",
       audience: "Open to all students — beginners welcome.",
       examples: [
         "Build your first REST API in an evening",
@@ -39,15 +39,15 @@ export const modules: Module[] = [
   },
   {
     id: "02",
-    title: "HACKATHONS",
-    body: "48-hour build sprints. Real problems, real teams, real demos.",
-    meta: "quarterly",
+    title: "InnoHack",
+    body: "6-7-hour build sprints. Real problems, real teams, real demos.",
+    meta: "yearly",
     span: "md:col-span-4 md:row-span-2",
     tall: true,
     detail: {
       format:
-        "Theme announced one week before. Teams of 2–4. Public demos on day 3.",
-      cadence: "Four times a year — once per quarter.",
+        "Theme announced on the day of the event. Teams of 3–5. Demonstration to the judges after the end of the coding time.",
+      cadence: "One times a year — once per year.",
       audience: "Mixed-skill teams encouraged. We help match teammates.",
       examples: [
         "Tools for Pokhara — local civic problems",
@@ -55,32 +55,11 @@ export const modules: Module[] = [
         "Hardware + Software — physical interactions",
       ],
       nextStep:
-        "Next hackathon: Hack/Pokhara 02 — early July. Registration opens in June.",
+        "Next InnoHack 2027 is scheduled for February, 2027. Start brainstorming project ideas and teammates now!",
     },
   },
   {
     id: "03",
-    title: "OPEN SOURCE",
-    body:
-      "Maintain libraries, contribute upstream, run an org that compounds across years.",
-    meta: "ongoing",
-    span: "md:col-span-4",
-    detail: {
-      format:
-        "Issue triage Mondays, PR reviews Thursdays. Maintainers rotate per semester.",
-      cadence: "Active year-round.",
-      audience:
-        "Anyone willing to send a first PR. Mentors available for newcomers.",
-      examples: [
-        "icp-dc/handbook — our internal docs",
-        "icp-dc/cli — tooling for student projects",
-        "Upstream contributions to Next.js, Astro, Bun",
-      ],
-      nextStep: "Browse open issues at github.com/icp-dc and claim one.",
-    },
-  },
-  {
-    id: "04",
     title: "STUDY GROUPS",
     body: "Small cohorts going deep on one topic — Rust, ML, distributed systems.",
     meta: "8-week cohorts",
@@ -99,28 +78,8 @@ export const modules: Module[] = [
   },
   {
     id: "05",
-    title: "BUILD SESSIONS",
-    body: "Friday nights in the lab. Bring a problem, leave with a commit.",
-    meta: "every friday",
-    span: "md:col-span-4",
-    detail: {
-      format:
-        "Open-format coworking. Snacks, music, a whiteboard, and lots of help.",
-      cadence: "Every Friday, 6pm–10pm, during the semester.",
-      audience: "Drop-in. No registration. Bring your laptop.",
-      examples: [
-        "Pair on a side project",
-        "Ask for code review",
-        "Sit next to someone better than you and learn",
-      ],
-      nextStep: "Just show up. The next one is this Friday.",
-    },
-  },
-  {
-    id: "06",
     title: "TEAM PROJECTS",
-    body:
-      "Long-running squads shipping ambitious software with real users in Pokhara.",
+    body: "Long-running squads shipping ambitious software with real users in Pokhara.",
     meta: "semester-long",
     span: "md:col-span-12",
     detail: {
@@ -130,9 +89,7 @@ export const modules: Module[] = [
       audience:
         "Members ready to commit consistently. Selection during cohort intake.",
       examples: [
-        "NAYAA — a marketplace for Pokhara's craft makers",
-        "Phewa Watch — open dataset for lake water quality",
-        "Campus Pulse — real-time chat for college events",
+        "Exam Seat Finder — A tool to find your seat for exam and RTE to make Exam seat plans easily",
       ],
       nextStep:
         "Apply during the core-team intake to be considered for a squad.",

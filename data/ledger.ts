@@ -33,7 +33,8 @@ export type PastEvent = {
 };
 
 export const upcoming: UpcomingEvent[] = [
-  {
+  /**  
+   * {
     date: "12",
     month: "JUN",
     title: "BUILD NIGHT 06",
@@ -67,11 +68,18 @@ export const upcoming: UpcomingEvent[] = [
     title: "DESIGN + DEV JAM",
     location: "Campus · in-person",
     time: "11:00 AM",
-  },
+  }, 
+  */
 ];
 
 export const past: PastEvent[] = [
+  /**
   { month: "MAY", title: "open source day", meta: "84 attendees" },
-  { month: "APR", title: "rust study circle", meta: "6-week cohort · 22 finishers" },
+  {
+    month: "APR",
+    title: "rust study circle",
+    meta: "6-week cohort · 22 finishers",
+  },
   { month: "MAR", title: "design + dev jam", meta: "9 teams · 9 demos" },
+    */
 ];

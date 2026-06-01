@@ -46,11 +46,29 @@ export function Team() {
               {open === i && (
                 <div className="grid grid-cols-12 gap-4 mt-6">
                   <div className="col-span-3 md:col-span-2">
-                    <div className="aspect-square brutal-border flex items-center justify-center bg-[var(--bg-2)]">
-                      <span className="font-display text-3xl md:text-5xl font-semibold opacity-80">
-                        {m.initials}
-                      </span>
-                    </div>
+                    {m.portfolio ? (
+                      <a
+                        href={m.portfolio}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`View ${m.name}'s portfolio`}
+                        className="group aspect-square brutal-border flex items-center justify-center bg-[var(--bg-2)] relative overflow-hidden cursor-pointer hover:bg-[var(--accent)] hover:border-[var(--accent)] transition-colors duration-0"
+                      >
+                        <span className="font-display text-3xl md:text-5xl font-semibold opacity-80 transition-opacity duration-200 group-hover:opacity-0">
+                          {m.initials}
+                        </span>
+                        <span className="absolute inset-0 flex flex-col items-center justify-center font-mono text-meta uppercase text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100 text-center px-2">
+                          <span>view</span>
+                          <span>portfolio ↗</span>
+                        </span>
+                      </a>
+                    ) : (
+                      <div className="aspect-square brutal-border flex items-center justify-center bg-[var(--bg-2)]">
+                        <span className="font-display text-3xl md:text-5xl font-semibold opacity-80">
+                          {m.initials}
+                        </span>
+                      </div>
+                    )}
                   </div>
                   <div className="col-span-9 md:col-span-7 flex flex-col justify-center">
                     <p className="text-lg md:text-xl leading-snug text-[var(--fg-2)]">

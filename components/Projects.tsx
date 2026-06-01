@@ -48,7 +48,9 @@ function Specimen({
               </span>
             </div>
             <div className="absolute bottom-0 left-0 right-0 bg-[var(--fg)] text-[var(--bg)] px-4 py-3 flex items-center justify-between translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-              <span className="font-mono text-meta uppercase">open details</span>
+              <span className="font-mono text-meta uppercase">
+                open details
+              </span>
               <span className="font-mono text-meta">→</span>
             </div>
           </button>
@@ -94,6 +96,8 @@ function Specimen({
             {project.live && (
               <a
                 href={project.live}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="font-mono text-meta uppercase underline underline-offset-4 hover:text-[var(--accent)]"
               >
                 live ↗
@@ -102,6 +106,8 @@ function Specimen({
             {project.repo && (
               <a
                 href={project.repo}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="font-mono text-meta uppercase underline underline-offset-4 hover:text-[var(--accent)]"
               >
                 github ↗
@@ -227,7 +233,9 @@ export function Projects() {
                 </div>
               </div>
 
-              <p className="text-lg md:text-xl text-[var(--fg-2)]">{active.tag}</p>
+              <p className="text-lg md:text-xl text-[var(--fg-2)]">
+                {active.tag}
+              </p>
               <p className="text-base leading-relaxed">{active.description}</p>
 
               <dl className="grid grid-cols-2 md:grid-cols-4 gap-4 border-y border-rule py-5 font-mono text-meta uppercase">
@@ -264,12 +272,22 @@ export function Projects() {
 
               <div className="flex gap-3 flex-wrap pt-2">
                 {active.live && (
-                  <a href={active.live} className="btn-primary">
+                  <a
+                    href={active.live}
+                    className="btn-primary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     visit live ↗
                   </a>
                 )}
                 {active.repo && (
-                  <a href={active.repo} className="btn-secondary">
+                  <a
+                    href={active.repo}
+                    className="btn-secondary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     github ↗
                   </a>
                 )}

@@ -5,74 +5,46 @@ export type Member = {
   role: string;
   quote: string;
   initials: string;
+  /** Optional portfolio URL. When set, the initials block on the expanded
+   * row becomes a link and reveals "view portfolio" on hover. */
+  portfolio?: string;
   socials: { label: string; href: string }[];
 };
 
 export const members: Member[] = [
   {
-    name: "ARYAN GURUNG",
-    role: "lead organizer",
+    name: "Darshan Regmi",
+    role: "lead Frontend Developer & President",
     quote:
-      "I help run the club day-to-day. Mostly interested in systems and infrastructure — happy to talk Kubernetes any time.",
-    initials: "AG",
+      "I help run the club day-to-day. Mostly interested in Mobile App Development && frontend — happy to talk Next.js and Expo any time.",
+    initials: "DR",
+    portfolio: "https://darshanregmi.com.np",
     socials: [
-      { label: "github", href: "#" },
-      { label: "linkedin", href: "#" },
-      { label: "email", href: "mailto:#" },
+      { label: "github", href: "https://github.com/darshan-regmi" },
+      { label: "linkedin", href: "https://linkedin.com/in/darshan-regmi" },
+      { label: "email", href: "mailto:darshan.regmi.a24@icp.edu.np" },
     ],
   },
   {
-    name: "SAMRIDDHI KC",
-    role: "design & community",
+    name: "Sneha Giri",
+    role: "Backend Developer & Vice President",
     quote:
       "I work on the visual side of things and help new members find their way in. Reach out if you're not sure where to start.",
     initials: "SK",
+    portfolio: "https://snehagiri.com.np",
     socials: [
-      { label: "github", href: "#" },
-      { label: "linkedin", href: "#" },
-      { label: "email", href: "mailto:#" },
-    ],
-  },
-  {
-    name: "NIRAJAN PAUDEL",
-    role: "backend & devops",
-    quote:
-      "I take care of our deployments and backend services. Always glad to help with debugging or code reviews.",
-    initials: "NP",
-    socials: [
-      { label: "github", href: "#" },
-      { label: "linkedin", href: "#" },
-      { label: "email", href: "mailto:#" },
-    ],
-  },
-  {
-    name: "MILA SHRESTHA",
-    role: "open source & study circles",
-    quote:
-      "I coordinate our open-source work and the study cohorts. Beginners are welcome — that's how I started too.",
-    initials: "MS",
-    socials: [
-      { label: "github", href: "#" },
-      { label: "linkedin", href: "#" },
-      { label: "email", href: "mailto:#" },
-    ],
-  },
-  {
-    name: "ABISHEK THAPA",
-    role: "events & partnerships",
-    quote:
-      "I organize events and look after partnerships with the college and local companies. Reach out if you have ideas.",
-    initials: "AT",
-    socials: [
-      { label: "github", href: "#" },
-      { label: "linkedin", href: "#" },
-      { label: "email", href: "mailto:#" },
+      { label: "github", href: "https://github.com/meoov-1" },
+      {
+        label: "linkedin",
+        href: "https://www.linkedin.com/in/sneha-giri-246129283/",
+      },
+      { label: "email", href: "mailto:sneha.giri.a24@icp.edu.np" },
     ],
   },
 ];
 
 export const rosterSummary = {
-  organizers: 5,
-  members: 142,
-  alumni: 27,
+  organizers: 2,
+  members: 50,
+  alumni: 1,
 };

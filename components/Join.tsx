@@ -18,10 +18,15 @@ function CoreTeamForm({ onDone }: { onDone: () => void }) {
   if (state === "done") {
     return (
       <div className="text-center py-6">
-        <MonoLabel className="block mb-3 opacity-100">[ application received ]</MonoLabel>
-        <h4 className="font-display font-semibold text-3xl">Thanks for applying.</h4>
+        <MonoLabel className="block mb-3 opacity-100">
+          [ application received ]
+        </MonoLabel>
+        <h4 className="font-display font-semibold text-3xl">
+          Thanks for applying.
+        </h4>
         <p className="mt-3 text-base text-[var(--fg-2)]">
-          We&apos;ll review your project links and get back to you within a week.
+          We&apos;ll review your project links and get back to you within a
+          week.
         </p>
         <button onClick={onDone} className="btn-secondary mt-8">
           close
@@ -33,36 +38,88 @@ function CoreTeamForm({ onDone }: { onDone: () => void }) {
   return (
     <form onSubmit={onSubmit} className="space-y-5">
       <p className="text-base text-[var(--fg-2)]">
-        Core team is for builders who are ready to ship and help run the community.
-        Share one project you&apos;ve built — that&apos;s the bar.
+        Core team is for builders who are ready to ship and help run the
+        community. Share one project you&apos;ve built — that&apos;s the bar.
       </p>
 
       <div>
-        <label className="field-label" htmlFor="ct-name">name</label>
-        <input id="ct-name" className="field" type="text" required placeholder="full name" />
+        <label className="field-label" htmlFor="ct-name">
+          name
+        </label>
+        <input
+          id="ct-name"
+          className="field"
+          type="text"
+          required
+          placeholder="full name"
+        />
       </div>
       <div>
-        <label className="field-label" htmlFor="ct-college">college</label>
-        <input id="ct-college" className="field" type="text" required placeholder="e.g. Informatics College Pokhara" />
+        <label className="field-label" htmlFor="ct-college">
+          college
+        </label>
+        <input
+          id="ct-college"
+          className="field"
+          type="text"
+          required
+          placeholder="e.g. Informatics College Pokhara"
+        />
       </div>
       <div>
-        <label className="field-label" htmlFor="ct-email">college email</label>
-        <input id="ct-email" className="field" type="email" required placeholder="you@college.edu.np" />
+        <label className="field-label" htmlFor="ct-email">
+          college email
+        </label>
+        <input
+          id="ct-email"
+          className="field"
+          type="email"
+          required
+          placeholder="you@college.edu.np"
+        />
       </div>
       <div>
-        <label className="field-label" htmlFor="ct-github">github profile url</label>
-        <input id="ct-github" className="field" type="url" required placeholder="https://github.com/your-handle" />
+        <label className="field-label" htmlFor="ct-github">
+          github profile url
+        </label>
+        <input
+          id="ct-github"
+          className="field"
+          type="url"
+          required
+          placeholder="https://github.com/your-handle"
+        />
       </div>
       <div>
-        <label className="field-label" htmlFor="ct-project">project repo url</label>
-        <input id="ct-project" className="field" type="url" required placeholder="https://github.com/you/project" />
+        <label className="field-label" htmlFor="ct-project">
+          project repo url
+        </label>
+        <input
+          id="ct-project"
+          className="field"
+          type="url"
+          required
+          placeholder="https://github.com/you/project"
+        />
       </div>
       <div>
-        <label className="field-label" htmlFor="ct-live">project live url</label>
-        <input id="ct-live" className="field" type="url" required placeholder="https://your-project.example.com" />
+        <label className="field-label" htmlFor="ct-live">
+          project live url
+        </label>
+        <input
+          id="ct-live"
+          className="field"
+          type="url"
+          required
+          placeholder="https://your-project.example.com"
+        />
       </div>
 
-      <button type="submit" disabled={state === "submitting"} className="btn-primary w-full justify-center">
+      <button
+        type="submit"
+        disabled={state === "submitting"}
+        className="btn-primary w-full justify-center"
+      >
         {state === "submitting" ? "submitting…" : "submit application →"}
       </button>
     </form>
@@ -101,23 +158,57 @@ function GeneralMemberForm({ onDone }: { onDone: () => void }) {
       </p>
 
       <div>
-        <label className="field-label" htmlFor="gm-name">name</label>
-        <input id="gm-name" className="field" type="text" required placeholder="full name" />
+        <label className="field-label" htmlFor="gm-name">
+          name
+        </label>
+        <input
+          id="gm-name"
+          className="field"
+          type="text"
+          required
+          placeholder="full name"
+        />
       </div>
       <div>
-        <label className="field-label" htmlFor="gm-college">college</label>
-        <input id="gm-college" className="field" type="text" required placeholder="e.g. Informatics College Pokhara" />
+        <label className="field-label" htmlFor="gm-college">
+          college
+        </label>
+        <input
+          id="gm-college"
+          className="field"
+          type="text"
+          required
+          placeholder="e.g. Informatics College Pokhara"
+        />
       </div>
       <div>
-        <label className="field-label" htmlFor="gm-email">college email</label>
-        <input id="gm-email" className="field" type="email" required placeholder="you@college.edu.np" />
+        <label className="field-label" htmlFor="gm-email">
+          college email
+        </label>
+        <input
+          id="gm-email"
+          className="field"
+          type="email"
+          required
+          placeholder="you@college.edu.np"
+        />
       </div>
       <div>
-        <label className="field-label" htmlFor="gm-github">github profile url</label>
-        <input id="gm-github" className="field" type="url" required placeholder="https://github.com/your-handle" />
+        <label className="field-label" htmlFor="gm-github">
+          github profile url
+        </label>
+        <input
+          id="gm-github"
+          className="field"
+          type="url"
+          required
+          placeholder="https://github.com/your-handle"
+        />
       </div>
       <div>
-        <label className="field-label" htmlFor="gm-why">why do you want to join?</label>
+        <label className="field-label" htmlFor="gm-why">
+          why do you want to join?
+        </label>
         <textarea
           id="gm-why"
           className="field"
@@ -127,7 +218,11 @@ function GeneralMemberForm({ onDone }: { onDone: () => void }) {
         />
       </div>
 
-      <button type="submit" disabled={state === "submitting"} className="btn-primary w-full justify-center">
+      <button
+        type="submit"
+        disabled={state === "submitting"}
+        className="btn-primary w-full justify-center"
+      >
         {state === "submitting" ? "submitting…" : "submit application →"}
       </button>
     </form>
@@ -158,7 +253,7 @@ export function Join() {
 
         <div className="mt-14 flex flex-col sm:flex-row gap-3 justify-center flex-wrap">
           <a
-            href="https://discord.com/"
+            href="https://discord.com/invite/7HpJhBjaMH"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary"
@@ -170,20 +265,38 @@ export function Join() {
             apply to core team
             <span aria-hidden>↗</span>
           </button>
-          <button onClick={() => setOpenForm("general")} className="btn-secondary">
+          <button
+            onClick={() => setOpenForm("general")}
+            className="btn-secondary"
+          >
             apply as general member
             <span aria-hidden>↗</span>
           </button>
         </div>
 
         <p className="mt-6 font-mono text-meta uppercase opacity-60 max-w-xl mx-auto">
-          general membership is open to all students · core team is by application
+          general membership is open to all students · core team is by
+          application
         </p>
 
         {/* Socials row */}
         <div className="mt-16 max-w-2xl mx-auto border-t border-b border-rule py-5 flex flex-wrap justify-center gap-x-8 gap-y-2 font-mono text-meta uppercase">
-          {["github ↗", "instagram ↗", "x ↗", "linkedin ↗", "email", "newsletter"].map((s) => (
-            <a key={s} href="#" className="hover:text-[var(--accent)] underline underline-offset-4">
+          {["github ↗", "discord ↗", "email"].map((s) => (
+            <a
+              key={s}
+              href={
+                s === "discord ↗"
+                  ? "https://discord.com/invite/7HpJhBjaMH"
+                  : s === "github ↗"
+                    ? "https://github.com/icpdevelopers"
+                    : s === "email"
+                      ? "mailto:dev@icp.edu.np"
+                      : "#"
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[var(--accent)] underline underline-offset-4"
+            >
               {s}
             </a>
           ))}

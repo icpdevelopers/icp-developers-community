@@ -46,8 +46,8 @@ export const site = {
     // filtered out of JSON-LD `sameAs` automatically.
     twitter: "",
     twitterHandle: "",
-    github: "https://github.com/darshan-regmi/ICP-Developers-Community",
-    discord: "",
+    github: "https://github.com/icpdevelopers",
+    discord: "https://discord.com/invite/7HpJhBjaMH",
     instagram: "",
     linkedin: "",
   },
@@ -63,7 +63,7 @@ export const site = {
     parentOrganization: "Informatics College Pokhara",
   },
   contact: {
-    email: "", // e.g. "hello@icp-dc.com"
+    email: "dev@icp.edu.np", // e.g. "hello@icp-dc.com"
   },
   // Used by Google Search Console verification meta tag if/when set.
   verification: {

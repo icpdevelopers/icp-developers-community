@@ -14,10 +14,9 @@ export const communityStatus: {
   panelTitle: "~/community.status",
   status: "live",
   rows: [
-    { label: "members", value: "142 active" },
-    { label: "cohort 06", value: "open · applications live" },
-    { label: "projects shipped", value: "27 · this year" },
-    { label: "next build night", value: "jun 12 · 7pm" },
+    { label: "members", value: "50" },
+    { label: "projects shipped", value: "1 · this year" },
+    { label: "next build night", value: "soon" },
     { label: "core team", value: "accepting", accent: true },
   ],
 };
