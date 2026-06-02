@@ -39,6 +39,7 @@ key is missing.
 | Runtime          | React 18                                                     |
 | Styling          | Tailwind CSS v3 + CSS variables                              |
 | Email            | [Resend](https://resend.com) — transactional + audience      |
+| Bot defence      | [hCaptcha](https://www.hcaptcha.com/) + in-memory IP rate limit |
 | Graphics         | Hand-written SVG → PNG via [sharp](https://sharp.pixelplumbing.com) |
 | Hosting          | Vercel                                                       |
 | Fonts            | Space Grotesk (display) · Inter (body) · JetBrains Mono      |
@@ -95,6 +96,8 @@ around 110 kB.
 ├── lib/
 │   ├── email.ts                  # HTML email templates
 │   ├── email-validation.ts       # Syntax + MX + disposable check
+│   ├── hcaptcha.ts               # Server-side hCaptcha token verification
+│   ├── rate-limit.ts             # In-memory per-IP sliding window (5 hits / 10 min)
 │   └── github.ts                 # Avatar URL helpers
 │
 ├── public/
@@ -199,6 +202,38 @@ college domain`).
 
 ---
 
+## Bot & abuse protection
+
+`/api/apply` is defended in three layers, all already wired in:
+
+1. **Hidden honeypot field** — silent reject if filled.
+2. **In-memory rate limit** — 5 submissions per IP per 10-minute window
+   (`lib/rate-limit.ts`). Lives on the warm serverless instance; cold
+   starts reset the map. Swap the `Map` for Vercel KV / Upstash Redis
+   when you want durability across instances.
+3. **hCaptcha** — server-verified via `lib/hcaptcha.ts`, widget rendered
+   inside both forms.
+
+### hCaptcha setup
+
+1. Sign up free at [hcaptcha.com](https://www.hcaptcha.com/) → **Sites → Add Site**.
+2. Copy the **Site Key** (public) and **Secret Key** (server-side).
+3. Add both to `.env.local`:
+   ```
+   NEXT_PUBLIC_HCAPTCHA_SITE_KEY=10000000-ffff-ffff-ffff-000000000001
+   HCAPTCHA_SECRET_KEY=0x0000000000000000000000000000000000000000
+   ```
+
+The pair above are hCaptcha's official **test keys** — they always pass,
+which is what you want in local dev. Replace them with real keys for
+production.
+
+If either env var is missing, server-side verification is skipped and
+the widget is hidden client-side. Useful for local dev, but **do not
+deploy without the real pair set on Vercel.**
+
+---
+
 ## Brand assets (favicon + OG image)
 
 Both are generated from SVG sources in [`public/`](./public).
@@ -243,6 +278,8 @@ The site is set up for one-click Vercel deploys.
    - `RESEND_AUDIENCE_ID` (recommended)
    - `RESEND_FROM` (optional, after you verify a domain)
    - `APPLY_TO_EMAIL` (optional, defaults to `dev@icp.edu.np`)
+   - `NEXT_PUBLIC_HCAPTCHA_SITE_KEY` (required in prod)
+   - `HCAPTCHA_SECRET_KEY` (required in prod)
 5. **Deploy.**
 
 Every push to `main` triggers a redeploy automatically.
@@ -332,7 +369,8 @@ node scripts/build-images.mjs    # regenerate all icons + OG card from public/*.
 - [x] `/sitemap.xml`, `/robots.txt`, `/manifest.webmanifest`
 - [x] All icons (favicon SVG + PNG, apple-touch, OG, Twitter)
 - [x] Custom 404 + 401 (`/locked`) pages
-- [x] Application forms with: syntax + MX + disposable + domain check + dedup + honeypot
+- [x] Application forms with: syntax + MX + disposable + domain check + dedup + honeypot + hCaptcha
+- [x] Per-IP rate limit on `/api/apply` (5 / 10 min sliding window)
 - [x] Auto-reply emails to applicants (doubles as delivery test)
 - [x] Theme color in `prefers-color-scheme` light + dark
 - [x] Reduced-motion respect in `app/globals.css`
@@ -341,8 +379,8 @@ node scripts/build-images.mjs    # regenerate all icons + OG card from public/*.
 
 **Recommended next steps when traffic grows:**
 
-- Rate-limit `/api/apply` (e.g. Upstash Redis sliding window) to prevent
-  bursty Resend abuse.
+- Move the rate limiter from in-memory `Map` to Vercel KV / Upstash Redis
+  so limits hold across cold starts and multiple instances.
 - Add a `Content-Security-Policy` header via `next.config.mjs` headers().
 - Verify your sending domain in Resend (move off `onboarding@resend.dev`).
 - Submit `https://your-domain/sitemap.xml` in Google Search Console.
