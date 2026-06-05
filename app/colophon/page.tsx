@@ -28,8 +28,8 @@ export default function Colophon() {
               THE BUILDERS.
             </h1>
             <p className="mt-8 text-xl md:text-2xl text-[var(--fg-2)] max-w-3xl leading-snug">
-              Two builders. One human, one model. This is the back-page credit
-              — typeface, framework, principles, date — the way they used to be
+              Two builders. One human, one model. This is the back-page credit —
+              typeface, framework, principles, date — the way they used to be
               done.
             </p>
           </div>
@@ -162,12 +162,12 @@ export default function Colophon() {
                 <li>
                   <span className="opacity-60 inline-block w-32">source</span>
                   <a
-                    href="https://github.com/darshan-regmi/ICP-Developers-Community"
+                    href="https://github.com/icpdevelopers/icp-developers-community"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="underline underline-offset-4 hover:text-[var(--accent)]"
                   >
-                    github.com/darshan-regmi/ICP-Developers-Community ↗
+                    github.com/icpdevelopers/icp-developers-community ↗
                   </a>
                 </li>
               </ul>

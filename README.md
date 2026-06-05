@@ -9,7 +9,7 @@ application forms wired through Resend with real email validation and
 duplicate-submission detection.
 
 - **Live:** [icp-developers-community.vercel.app](https://icp-developers-community.vercel.app)
-- **Source:** [github.com/darshan-regmi/ICP-Developers-Community](https://github.com/darshan-regmi/ICP-Developers-Community)
+- **Source:** [github.com/icpdevelopers/icp-developers-community](https://github.com/icpdevelopers/icp-developers-community)
 - **Built by:** [Darshan Regmi](https://github.com/darshan-regmi), paired with Claude (Opus 4.7) by Anthropic. See [`/colophon`](https://icp-developers-community.vercel.app/colophon).
 
 ---
@@ -17,7 +17,7 @@ duplicate-submission detection.
 ## Quick start
 
 ```bash
-git clone https://github.com/darshan-regmi/ICP-Developers-Community.git
+git clone https://github.com/icpdevelopers/icp-developers-community.git
 cd ICP-Developers-Community
 cp .env.example .env.local        # then fill in RESEND_API_KEY (full access)
 npm install
@@ -32,17 +32,17 @@ key is missing.
 
 ## Tech stack
 
-| Layer            | Choice                                                       |
-| ---------------- | ------------------------------------------------------------ |
-| Framework        | Next.js 14 (App Router)                                      |
-| Language         | TypeScript                                                   |
-| Runtime          | React 18                                                     |
-| Styling          | Tailwind CSS v3 + CSS variables                              |
-| Email            | [Resend](https://resend.com) — transactional + audience      |
-| Bot defence      | [hCaptcha](https://www.hcaptcha.com/) + in-memory IP rate limit |
-| Graphics         | Hand-written SVG → PNG via [sharp](https://sharp.pixelplumbing.com) |
-| Hosting          | Vercel                                                       |
-| Fonts            | Space Grotesk (display) · Inter (body) · JetBrains Mono      |
+| Layer       | Choice                                                              |
+| ----------- | ------------------------------------------------------------------- |
+| Framework   | Next.js 14 (App Router)                                             |
+| Language    | TypeScript                                                          |
+| Runtime     | React 18                                                            |
+| Styling     | Tailwind CSS v3 + CSS variables                                     |
+| Email       | [Resend](https://resend.com) — transactional + audience             |
+| Bot defence | [hCaptcha](https://www.hcaptcha.com/) + in-memory IP rate limit     |
+| Graphics    | Hand-written SVG → PNG via [sharp](https://sharp.pixelplumbing.com) |
+| Hosting     | Vercel                                                              |
+| Fonts       | Space Grotesk (display) · Inter (body) · JetBrains Mono             |
 
 No CSS-in-JS, no UI library, no analytics scripts. First Load JS sits
 around 110 kB.
@@ -116,17 +116,17 @@ Every piece of content on the site lives in [`data/`](./data) as a typed
 TypeScript module. **You do not need to touch the components to change
 copy.**
 
-| File                       | Controls                                                          |
-| -------------------------- | ----------------------------------------------------------------- |
-| `data/site.ts`             | Site name, URL, description, social links, SEO, parent org, email-domain restriction |
-| `data/headline.ts`         | Hero static + rotating words, dwell time, slogans                 |
-| `data/communityStatus.ts`  | The terminal panel in the hero                                    |
-| `data/threeTruths.ts`      | The About-section bullets                                         |
-| `data/modules.ts`          | The six "What we do" cards + their modal content                  |
-| `data/ledger.ts`           | Upcoming and past events                                          |
-| `data/projects.ts`         | Project showcase + `featuredCount` (default 4 shown, rest behind "view all") |
-| `data/members.ts`          | Roster — name, role, quote, GitHub URL (auto-fetches avatar), portfolio link |
-| `data/library.ts`          | Roadmap + curated reading list                                    |
+| File                      | Controls                                                                             |
+| ------------------------- | ------------------------------------------------------------------------------------ |
+| `data/site.ts`            | Site name, URL, description, social links, SEO, parent org, email-domain restriction |
+| `data/headline.ts`        | Hero static + rotating words, dwell time, slogans                                    |
+| `data/communityStatus.ts` | The terminal panel in the hero                                                       |
+| `data/threeTruths.ts`     | The About-section bullets                                                            |
+| `data/modules.ts`         | The six "What we do" cards + their modal content                                     |
+| `data/ledger.ts`          | Upcoming and past events                                                             |
+| `data/projects.ts`        | Project showcase + `featuredCount` (default 4 shown, rest behind "view all")         |
+| `data/members.ts`         | Roster — name, role, quote, GitHub URL (auto-fetches avatar), portfolio link         |
+| `data/library.ts`         | Roadmap + curated reading list                                                       |
 
 Save the file, the dev server reloads, content updates.
 
@@ -299,16 +299,16 @@ Once you have a domain (e.g. `icp-dc.com`):
 
 ## Routes
 
-| Path                     | Purpose                                                    |
-| ------------------------ | ---------------------------------------------------------- |
-| `/`                      | Home — all eight sections                                  |
-| `/colophon`              | Editorial credits — who built it + tech stack              |
-| `/locked`                | "Members only" page for redirecting from private repos     |
-| (404)                    | "Shame on you" page (auto-served by `app/not-found.tsx`)   |
-| `/api/apply`             | POST endpoint for both application forms                   |
-| `/sitemap.xml`           | Auto-generated sitemap                                     |
-| `/robots.txt`            | Crawl rules + sitemap pointer                              |
-| `/manifest.webmanifest`  | PWA manifest (Add to Home Screen)                          |
+| Path                    | Purpose                                                  |
+| ----------------------- | -------------------------------------------------------- |
+| `/`                     | Home — all eight sections                                |
+| `/colophon`             | Editorial credits — who built it + tech stack            |
+| `/locked`               | "Members only" page for redirecting from private repos   |
+| (404)                   | "Shame on you" page (auto-served by `app/not-found.tsx`) |
+| `/api/apply`            | POST endpoint for both application forms                 |
+| `/sitemap.xml`          | Auto-generated sitemap                                   |
+| `/robots.txt`           | Crawl rules + sitemap pointer                            |
+| `/manifest.webmanifest` | PWA manifest (Add to Home Screen)                        |
 
 ### Using `/locked` for private repos
 
@@ -325,19 +325,19 @@ the visitor sees exactly what they tried to reach.
 
 Press `?` anywhere on the site to open the menu + shortcuts overlay.
 
-| Shortcut | Action                              |
-| -------- | ----------------------------------- |
-| `?`      | Open the menu                       |
-| `g h`    | Home                                |
-| `g a`    | About                               |
-| `g w`    | What we do                          |
-| `g e`    | Events                              |
-| `g p`    | Projects                            |
-| `g t`    | Team                                |
-| `g r`    | Resources                           |
-| `g j`    | Join                                |
-| `g c`    | Colophon                            |
-| `esc`    | Close any overlay                   |
+| Shortcut | Action            |
+| -------- | ----------------- |
+| `?`      | Open the menu     |
+| `g h`    | Home              |
+| `g a`    | About             |
+| `g w`    | What we do        |
+| `g e`    | Events            |
+| `g p`    | Projects          |
+| `g t`    | Team              |
+| `g r`    | Resources         |
+| `g j`    | Join              |
+| `g c`    | Colophon          |
+| `esc`    | Close any overlay |
 
 Chords work from any page — `g p` on `/colophon` jumps to home and scrolls
 to the projects section.
