@@ -41,6 +41,10 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
+# ─── Package manager lockfiles (only pnpm-lock.yaml is canonical) ───────────
+package-lock.json
+yarn.lock
+
 # ─── Testing / coverage ─────────────────────────────────────────────────────
 /coverage
 *.lcov

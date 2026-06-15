@@ -20,8 +20,8 @@ duplicate-submission detection.
 git clone https://github.com/icpdevelopers/icp-developers-community.git
 cd ICP-Developers-Community
 cp .env.example .env.local        # then fill in RESEND_API_KEY (full access)
-npm install
-npm run dev                       # → http://localhost:3000
+pnpm install
+pnpm dev                          # → http://localhost:3000
 ```
 
 The site browses fine without env vars — only the application forms need
@@ -344,13 +344,13 @@ to the projects section.
 
 ---
 
-## npm scripts
+## Scripts
 
 ```bash
-npm run dev       # start dev server (http://localhost:3000)
-npm run build     # production build
-npm run start     # serve the production build
-npm run lint      # run Next.js / ESLint
+pnpm dev          # start dev server (http://localhost:3000)
+pnpm build        # production build
+pnpm start        # serve the production build
+pnpm lint         # run Next.js / ESLint
 ```
 
 Plus the standalone image-regeneration script:
