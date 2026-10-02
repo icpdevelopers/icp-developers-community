@@ -15,7 +15,7 @@ export function WhatWeDo() {
         <SectionHeader
           index="03"
           slug="what-we-do"
-          title="SIX MODULES."
+          title="FOUR MODULES."
           kicker="what you'll do"
         />
 
@@ -38,13 +38,17 @@ export function WhatWeDo() {
                 <h3 className="font-display font-semibold text-3xl md:text-4xl mb-3">
                   {m.title}
                 </h3>
-                <p className="text-base md:text-lg max-w-md opacity-90">{m.body}</p>
+                <p className="text-base md:text-lg max-w-md opacity-90">
+                  {m.body}
+                </p>
               </div>
               <div className="mt-6 pt-4 border-t border-current opacity-70 flex justify-between w-full">
                 <span className="font-mono text-meta uppercase">
                   cadence · {m.meta}
                 </span>
-                <span className="font-mono text-meta uppercase">read more →</span>
+                <span className="font-mono text-meta uppercase">
+                  read more →
+                </span>
               </div>
             </button>
           ))}
@@ -59,7 +63,9 @@ export function WhatWeDo() {
         >
           {active && (
             <div className="space-y-6">
-              <p className="text-lg md:text-xl text-[var(--fg-2)]">{active.body}</p>
+              <p className="text-lg md:text-xl text-[var(--fg-2)]">
+                {active.body}
+              </p>
 
               <dl className="grid grid-cols-1 md:grid-cols-3 gap-4 border-y border-rule py-5">
                 <div>

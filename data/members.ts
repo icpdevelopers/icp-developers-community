@@ -14,9 +14,9 @@ export type Member = {
 export const members: Member[] = [
   {
     name: "Darshan Regmi",
-    role: "lead Frontend Developer & President",
+    role: "Ex - President",
     quote:
-      "I help run the club day-to-day. Mostly interested in Mobile App Development && frontend — happy to talk Next.js and Expo any time.",
+      "I used to help run the club day-to-day. Mostly interested in Mobile App Development && frontend — happy to talk Next.js and Expo any time.",
     initials: "DR",
     portfolio: "https://darshanregmi.com.np",
     socials: [
@@ -27,9 +27,9 @@ export const members: Member[] = [
   },
   {
     name: "Sneha Giri",
-    role: "Backend Developer & Vice President",
+    role: "Ex - Vice President",
     quote:
-      "I work on the visual side of things and help new members find their way in. Reach out if you're not sure where to start.",
+      "I used to work on the visual side of things and help new members find their way in. Reach out if you're not sure where to start.",
     initials: "SG",
     portfolio: "https://snehagiri.com.np",
     socials: [
@@ -44,7 +44,12 @@ export const members: Member[] = [
 ];
 
 export const rosterSummary = {
-  organizers: 2,
-  members: 50,
+  organizers: 1,
+  /**
+   * Derived from the roster above, not hand-maintained. This was a
+   * literal `50` sitting next to an array of two, so the rendered summary
+   * contradicted the grid directly beneath it.
+   */
+  members: members.length,
   alumni: 1,
 };

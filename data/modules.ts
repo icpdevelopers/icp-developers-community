@@ -77,7 +77,7 @@ export const modules: Module[] = [
     },
   },
   {
-    id: "05",
+    id: "04",
     title: "TEAM PROJECTS",
     body: "Long-running squads shipping ambitious software with real users in Pokhara.",
     meta: "semester-long",
