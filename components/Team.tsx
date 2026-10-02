@@ -7,6 +7,12 @@ import { MonoLabel } from "./ui/MonoLabel";
 import { members, rosterSummary, type Member } from "@/data/members";
 import { githubUsernameOf, githubAvatarUrl } from "@/lib/github";
 
+/** "1 organizer · 2 members · 1 alum" — the summary line sits directly
+ *  under the roster, so its grammar has to agree with its own numbers. */
+function plural(count: number, singular: string, pluralForm = `${singular}s`) {
+  return `${count} ${count === 1 ? singular : pluralForm}`;
+}
+
 function Avatar({ member, dim = false }: { member: Member; dim?: boolean }) {
   const username = githubUsernameOf(member);
   const [imageFailed, setImageFailed] = useState(false);
@@ -121,8 +127,9 @@ export function Team() {
 
         <div className="mt-12 flex items-center justify-between flex-wrap gap-4">
           <MonoLabel>
-            {rosterSummary.organizers} organizers · {rosterSummary.members} members ·{" "}
-            {rosterSummary.alumni} alumni
+            {plural(rosterSummary.organizers, "organizer")} ·{" "}
+            {plural(rosterSummary.members, "member")} ·{" "}
+            {plural(rosterSummary.alumni, "alum", "alumni")}
           </MonoLabel>
           <a href="#join" className="btn-secondary">
             apply to core team
